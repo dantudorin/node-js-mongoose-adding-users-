@@ -10,7 +10,6 @@ exports.registerData = (req, res, next) => {
 
     user.save()
     .then(result => {
-        console.log("Intrat in save bossy");
         res.status(200).redirect('/');
     })
     .catch(error => {
