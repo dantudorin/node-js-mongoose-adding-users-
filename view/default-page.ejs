@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/default-page.css">
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid jmb-color">
+        <div class="container">
+          <h1 class="display-4">Welcome to users app</h1>
+          <form action="/formPage" method="GET">
+            <button class="btn btn-primary btn-lg" role="button" >Add a user</a>
+         </form>
+        </div>
+      </div>
+    <% if(users.length > 0) { %> 
+        <div class="container">
+            <p class="text-decoration-none">Users list</p>
+            <ul class="list-group">
+                <% for (let user of users) { %>
+                    <li class="list-group-item list-group-item-info">Username : <%=user.username %>  :::::: Email : <%=user.email %></li>
+                <% } %>
+            </ul>
+        </div>
+    <% } else { %>
+    <div class="alert alert-warning" role="alert">
+        No users were found!
+    </div> 
+    <% } %>
+
+</body>
+</html>
